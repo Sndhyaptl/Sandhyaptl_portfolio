@@ -50,7 +50,7 @@ const Hero = () => {
 
           <p className="description">
             Passionate .NET Full Stack Developer specializing in
-            ASP.NET Core, React, SQL Server and modern web
+            ASP.NET Core, ASP.NET MVC React, SQL Server and modern web
             technologies. I build secure, scalable and beautiful
             applications.
           </p>
