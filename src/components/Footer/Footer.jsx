@@ -46,9 +46,7 @@ const Footer = () => {
       <p className="copyright">
         © {new Date().getFullYear()} Sandhya Patel
 
-        <br />
-
-        Made with <FaHeart className="heart" /> using React
+      
       </p>
 
     </footer>
