@@ -75,11 +75,11 @@ const Hero = () => {
               <FaGithub />
             </a>
 
-            <a href="https://linkedin.com">
+            <a href="https://linkedin.com/sandhya-devi">
               <FaLinkedin />
             </a>
 
-            <a href="mailto:you@gmail.com">
+            <a href="mailto:sandhyapassion1207@gmail.com">
               <FaEnvelope />
             </a>
 
