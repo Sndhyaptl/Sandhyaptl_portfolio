@@ -1,5 +1,5 @@
 .portfolio{
-padding:100px 8%;
+padding:20px 8%;
 background:#08111f;
 }
 
@@ -44,7 +44,8 @@ transition:.3s;
 
 background:#00ffd5;
 
-color:#000;
+color:#000 !important;
+font-weight: bold;
 
 }
 

@@ -64,16 +64,11 @@ const About = () => {
           <h3>.NET Full Stack Developer</h3>
 
           <p>
-            I'm a passionate .NET Full Stack Developer with experience in
-            building scalable enterprise applications using ASP.NET Core,
-            ASP.NET MVC, C#, SQL Server, Entity Framework, JavaScript,
-            React, Tailwind CSS, Bootstrap, and REST APIs.
+            I am a passionate .NET Developer specializing in building secure, scalable, and high-performance web applications. With expertise in ASP.NET Core, ASP.NET MVC, C#, SQL Server, Web APIs, JavaScript, jQuery, and Bootstrap, I develop efficient solutions that address real-world business challenges. I enjoy transforming complex requirements into intuitive digital experiences while maintaining clean code, optimized performance, and modern development standards.
           </p>
 
           <p>
-            I enjoy solving complex business problems, designing clean user
-            interfaces, optimizing databases, and developing secure,
-            high-performance web applications.
+            My journey in software development began with a passion for technology and problem-solving. Today, I leverage modern .NET technologies to design and develop secure, scalable, and high-performance web applications. I enjoy transforming complex business requirements into efficient digital solutions while continuously exploring new tools, frameworks, and best practices to deliver exceptional user experiences.
           </p>
 
           <div className="info-grid">

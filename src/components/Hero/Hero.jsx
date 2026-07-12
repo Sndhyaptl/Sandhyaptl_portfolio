@@ -7,7 +7,6 @@ import {
   FaArrowDown,
 } from "react-icons/fa";
 
-import profile from "../../assets/images/profile.png";
 import resume from "../../assets/resume.pdf";
 
 import "./Hero.css";
@@ -15,15 +14,11 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <section className="hero" id="home">
-
-      <div className="aurora"></div>
-
       <div className="hero-container">
-
         <motion.div
-          className="hero-left"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          className="hero-content"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           <p className="hello">👋 Hello, I'm</p>
@@ -42,17 +37,19 @@ const Hero = () => {
               2000,
               "C# Developer",
               2000,
+              "Problem Solver",
+              2000,
             ]}
             wrapper="h2"
-            speed={40}
+            speed={45}
             repeat={Infinity}
           />
 
           <p className="description">
-            Passionate .NET Full Stack Developer specializing in
-            ASP.NET Core, ASP.NET MVC React, SQL Server and modern web
-            technologies. I build secure, scalable and beautiful
-            applications.
+            Building secure, scalable, and high-performance web applications
+            using ASP.NET Core, C#, React, SQL Server, and modern web
+            technologies. Passionate about clean architecture, efficient
+            problem-solving, and delivering exceptional user experiences.
           </p>
 
           <div className="hero-buttons">
@@ -60,47 +57,34 @@ const Hero = () => {
               View Projects
             </a>
 
-            <a
-              href={resume}
-              className="btn-outline"
-              download
-            >
+            <a href={resume} className="btn-outline" download>
               Download CV
             </a>
           </div>
 
           <div className="socials">
-
-            <a href="https://github.com/Sndhyaptl">
+            <a
+              href="https://github.com/Sndhyaptl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub />
             </a>
 
-            <a href="https://linkedin.com/sandhya-devi">
+            <a
+              href="https://www.linkedin.com/in/sandhya-devi/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin />
             </a>
 
             <a href="mailto:sandhyapassion1207@gmail.com">
               <FaEnvelope />
             </a>
-
           </div>
         </motion.div>
-
-        <motion.div
-          className="hero-right"
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <img src={profile} alt="profile" />
-        </motion.div>
-
       </div>
-
-      <a href="#about" className="scroll">
-        <FaArrowDown />
-      </a>
-
     </section>
   );
 };

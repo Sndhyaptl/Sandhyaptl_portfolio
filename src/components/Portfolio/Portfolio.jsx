@@ -6,9 +6,7 @@ import "./Portfolio.css";
 
 const categories = [
   "All",
-  ".NET",
-  "React",
-  "Full Stack",
+  ...new Set(projects.map((project) => project.category)),
 ];
 
 const Portfolio = () => {
@@ -26,15 +24,22 @@ const Portfolio = () => {
       </h2>
 
       <div className="filter">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={active === category ? "active" : ""}
-            onClick={() => setActive(category)}
-          >
-            {category}
-          </button>
-        ))}
+        {categories.map((category) => {
+          const count =
+            category === "All"
+              ? projects.length
+              : projects.filter((project) => project.category === category).length;
+
+          return (
+            <button
+              key={category}
+              className={active === category ? "active" : ""}
+              onClick={() => setActive(category)}
+            >
+              {category} ({count})
+            </button>
+          );
+        })}
       </div>
 
       <div className="project-grid">
@@ -57,21 +62,25 @@ const Portfolio = () => {
               </div>
 
               <div className="buttons">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub /> GitHub
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                )}
 
-                <a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaExternalLinkAlt /> Live
-                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaExternalLinkAlt /> Live
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

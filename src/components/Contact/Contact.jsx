@@ -89,7 +89,7 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://linkedin.com/in/YOUR_USERNAME"
+              href="https://linkedin.com/in/sandhya-devi/"
               target="_blank"
               rel="noreferrer"
             >

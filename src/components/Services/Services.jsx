@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+
+
+import "./Services.css";
+
 import {
   FaLaptopCode,
   FaServer,
@@ -6,46 +10,86 @@ import {
   FaCloud,
   FaMobileAlt,
   FaTools,
+  FaCodeBranch,
+  FaShieldAlt,
+  FaCloudUploadAlt,
 } from "react-icons/fa";
 
-import "./Services.css";
-
 const services = [
+  // Existing Services
   {
     icon: <FaLaptopCode />,
     title: "Frontend Development",
     description:
-      "Modern responsive user interfaces using React, JavaScript, Tailwind CSS and Bootstrap.",
+      "Modern responsive user interfaces using React, JavaScript, Tailwind CSS, Bootstrap, HTML5, and CSS3.",
   },
   {
     icon: <FaServer />,
     title: "Backend Development",
     description:
-      "Scalable REST APIs and enterprise applications using ASP.NET Core, MVC and C#.",
+      "Scalable REST APIs and enterprise applications using ASP.NET Core, ASP.NET MVC, C#, and Entity Framework.",
   },
   {
     icon: <FaDatabase />,
     title: "Database Design",
     description:
-      "SQL Server database design, stored procedures, optimization and Entity Framework.",
+      "SQL Server database design, stored procedures, views, query optimization, and Entity Framework.",
   },
   {
     icon: <FaCloud />,
     title: "Cloud Deployment",
     description:
-      "Deploy applications on IIS, Azure and Cloudflare with CI/CD practices.",
+      "Deploy applications on IIS, Azure, Cloudflare, and manage hosting with CI/CD practices.",
   },
   {
     icon: <FaMobileAlt />,
     title: "Responsive Design",
     description:
-      "Pixel-perfect responsive websites that work seamlessly across all devices.",
+      "Create pixel-perfect, mobile-friendly websites that work seamlessly across all screen sizes.",
   },
   {
     icon: <FaTools />,
     title: "Maintenance & Support",
     description:
-      "Application enhancements, bug fixing, performance tuning and long-term support.",
+      "Application enhancements, bug fixing, performance tuning, upgrades, and long-term technical support.",
+  },
+
+  // Worked On
+  {
+    icon: <FaLaptopCode />,
+    title: "Custom Web Applications",
+    description:
+      "Develop scalable and secure business applications using ASP.NET Core, C#, SQL Server, React, and modern web technologies.",
+  },
+  {
+    icon: <FaCodeBranch />,
+    title: "Web API Development",
+    description:
+      "Build RESTful APIs and integrate third-party services for seamless communication between enterprise systems.",
+  },
+  {
+    icon: <FaDatabase />,
+    title: "Database Solutions",
+    description:
+      "Design and optimize SQL Server databases, stored procedures, indexing, and queries for maximum performance.",
+  },
+  {
+    icon: <FaTools />,
+    title: "Application Maintenance",
+    description:
+      "Enhance existing applications, resolve issues, optimize performance, and ensure long-term reliability.",
+  },
+  {
+    icon: <FaShieldAlt />,
+    title: "Authentication & Security",
+    description:
+      "Implement authentication, authorization, JWT, role-based access control, and enterprise-level security.",
+  },
+  {
+    icon: <FaCloudUploadAlt />,
+    title: "Deployment & Hosting",
+    description:
+      "Deploy and maintain applications on IIS and cloud platforms with reliable hosting and release management.",
   },
 ];
 
