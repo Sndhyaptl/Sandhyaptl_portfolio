@@ -7,7 +7,7 @@ import {
   FaArrowDown,
 } from "react-icons/fa";
 
-import resume from "../../assets/resume.pdf";
+import resume from "../../assets/Sandhya_Devi.pdf";
 
 import "./Hero.css";
 
@@ -21,10 +21,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <p className="hello">👋 Hello, I'm</p>
+          <p className="hello">Hello, I'm</p>
 
           <h1>
-            Sandhya <span>Patel</span>
+            Sandhya <span>Devi</span>
           </h1>
 
           <TypeAnimation

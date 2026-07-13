@@ -1,5 +1,6 @@
-import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import { sendEmail } from "../../services/emailService";
+
 import {
   FaEnvelope,
   FaPhoneAlt,
@@ -7,29 +8,51 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+
 import { motion } from "framer-motion";
+
 import "./Contact.css";
 
 const Contact = () => {
-  const form = useRef();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const sendEmail = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(() => {
-        alert("Message sent successfully!");
-        form.current.reset();
-      })
-      .catch(() => {
-        alert("Something went wrong.");
+    setLoading(true);
+
+    try {
+      const response = await sendEmail(formData);
+
+      alert(response.message || "Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
       });
+    } catch (error) {
+      alert(error.message || "Failed to send email.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -38,18 +61,20 @@ const Contact = () => {
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
       >
         Contact <span>Me</span>
       </motion.h2>
 
       <div className="contact-container">
 
-        {/* Left */}
+        {/* Left Side */}
 
         <motion.div
           className="contact-info"
           initial={{ x: -60, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
         >
 
           <h3>Let's Connect</h3>
@@ -99,28 +124,33 @@ const Contact = () => {
           </div>
 
         </motion.div>
-
-        {/* Right */}
+                {/* Right Side */}
 
         <motion.form
-          ref={form}
-          onSubmit={sendEmail}
+          onSubmit={handleSubmit}
           className="contact-form"
           initial={{ x: 60, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
         >
 
           <input
             type="text"
-            name="user_name"
+            name="name"
             placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            autoComplete="name"
             required
           />
 
           <input
             type="email"
-            name="user_email"
+            name="email"
             placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            autoComplete="email"
             required
           />
 
@@ -128,6 +158,8 @@ const Contact = () => {
             type="text"
             name="subject"
             placeholder="Subject"
+            value={formData.subject}
+            onChange={handleChange}
             required
           />
 
@@ -135,11 +167,16 @@ const Contact = () => {
             name="message"
             rows="6"
             placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
             required
           />
 
-          <button type="submit">
-            Send Message
+          <button
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Sending..." : "Send Message"}
           </button>
 
         </motion.form>

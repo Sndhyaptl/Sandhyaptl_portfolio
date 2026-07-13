@@ -6,7 +6,7 @@ import {
   FaAward,
 } from "react-icons/fa";
 
-import profile from "../../assets/images/profile.png";
+import profile from "../../assets/images/profile_new.png";
 import "./About.css";
 
 const stats = [
@@ -52,7 +52,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: .8 }}
         >
-          <img src={profile} alt="Sandhya Patel" />
+          <img src={profile} alt="Sandhya Devi" />
         </motion.div>
 
         <motion.div
@@ -75,7 +75,7 @@ const About = () => {
 
             <div>
               <strong>Name</strong>
-              <span>Sandhya Patel</span>
+              <span>Sandhya Devi</span>
             </div>
 
             <div>

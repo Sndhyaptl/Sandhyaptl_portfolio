@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="footer">
 
-      <h2>Sandhya Patel</h2>
+      <h2>Sandhya Devi</h2>
 
       <p>
         .NET Full Stack Developer | React Developer
@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
 
       <p className="copyright">
-        © {new Date().getFullYear()} Sandhya Patel
+        © {new Date().getFullYear()} Sandhya Devi
 
       
       </p>
